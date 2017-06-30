@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
+  root 'static#home'
+
   resources :users
-  root 'application#hello'
 
 end

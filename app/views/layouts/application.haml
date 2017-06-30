@@ -2,9 +2,40 @@
 %html
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %title Myapp
+    %title Maxsip Inventory
     = csrf_meta_tags
+    %link{:crossorigin => "anonymous", :href => "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css", :integrity => "sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ", :rel => "stylesheet"}/
+    %script{:crossorigin => "anonymous", :integrity => "sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n", :src => "https://code.jquery.com/jquery-3.1.1.slim.min.js"}
+    %script{:crossorigin => "anonymous", :integrity => "sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb", :src => "https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"}
+    %script{:crossorigin => "anonymous", :integrity => "sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn", :src => "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"}
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-    = yield
+
+    .header
+      .h1 Maxsip Inventory
+
+    .menu
+      %h2 Users
+      .list-group
+        %h2 Vendors
+        %a.list-group-item.list-group-item-action Name
+      .list-group
+        %h2 Customers
+        %a.list-group-item.list-group-item-action Name
+        %a.list-group-item.list-group-item-action Customer_ID
+      .list-group
+        %h2 Product
+        %a.list-group-item.list-group-item-action Manufacturer
+        %a.list-group-item.list-group-item-action Make
+        %a.list-group-item.list-group-item-action Model
+        %a.list-group-item.list-group-item-action MAC Address
+        %a.list-group-item.list-group-item-action Vendor
+        %a.list-group-item.list-group-item-action Vendor_Price
+        %a.list-group-item.list-group-item-action Customer
+        %a.list-group-item.list-group-item-action Customer_Price
+
+    .content= yield
+
+    %footer
+      %p &copy; Maxsip #{ Date.current.year }

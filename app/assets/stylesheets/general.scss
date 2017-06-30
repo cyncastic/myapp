@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+$color1: none; //#10222b;
+$color2: none; //#95AB63;
+$color3: none; //#BDD684;
+$color4: none; //#E2F0D6;
+$color5: none; //#F6FFE0;
+
+body{
+  font-family: 'Roboto', sans-serif;
+}
+
+body{
+
+  .header{
+    margin: 0;
+    background: $color4;
+
+  }
+
+  .menu{
+    background: $color3;
+    ul, ul li{
+      margin: 0;
+    }
+  }
+
+  .content{
+    background: $color5;
+  }
+
+  footer{
+    background: $color2;
+  }
+
+}
