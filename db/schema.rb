@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170630172115) do
+ActiveRecord::Schema.define(version: 20170630213534) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,20 @@ ActiveRecord::Schema.define(version: 20170630172115) do
     t.integer "maxsip_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "manufacturers", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "models", force: :cascade do |t|
+    t.string "name"
+    t.bigint "manufacturer_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["manufacturer_id"], name: "index_models_on_manufacturer_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -35,4 +49,5 @@ ActiveRecord::Schema.define(version: 20170630172115) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "models", "manufacturers"
 end

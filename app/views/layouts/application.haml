@@ -11,6 +11,8 @@
   %body
     .container
 
+      %p.notice= notice
+
       %header
         %h1 Maxsip Inventory
         %nav.menu
@@ -19,6 +21,8 @@
             %li= link_to 'Users', users_path
             %li= link_to 'Vendors', vendors_path
             %li= link_to 'Customers', customers_path
+            %li= link_to 'Manufacturers', manufacturers_path
+            %li= link_to 'Models', models_path
 
       .content=yield
 
