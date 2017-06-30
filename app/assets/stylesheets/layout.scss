@@ -1,19 +1,27 @@
+h1, h2, h3, h4, h5, h6, ul, li, p{
+  margin: 0; padding: 0;
+}
+
+ul{ list-style: none; }
+
 body{
 
-  .header{
-
-  }
-
-  .menu{
-
+  header{
+    height: 10vh;
+    .menu ul{
+        display: flex;
+        li{
+          padding: 1.5em;
+        }
+      }
   }
 
   .content{
-
+    height: 85vh;
   }
 
   footer{
-
+    height: 5vh;
   }
 
 }
