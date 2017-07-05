@@ -6,22 +6,26 @@ ul{ list-style: none; }
 
 body{
 
-  header{
-    height: 10vh;
-    .menu ul{
-        display: flex;
-        li{
-          padding: 1.5em;
+  .container{
+    width: 1200px;
+    margin: 0 auto;
+    header{
+      height: 10vh;
+      .menu ul{
+          display: flex;
+          li{
+            padding: 1.5em;
+          }
         }
-      }
-  }
+    }
 
-  .content{
-    height: 85vh;
-  }
+    .content{
+      height: 85vh;
+    }
 
-  footer{
-    height: 5vh;
-  }
+    footer{
+      height: 5vh;
+    }
 
+  }
 }
