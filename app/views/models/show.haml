@@ -4,6 +4,7 @@
 %p
   %strong Manufacturer:
   = @model.manufacturer.name
-= link_to 'Edit', edit_model_path(@model)
-|
-= link_to 'Back', models_path
+
+.actions
+  = link_to 'Edit', edit_model_path(@model)
+  = link_to 'Back', models_path
