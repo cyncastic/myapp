@@ -9,12 +9,12 @@
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
 
   %body
-    .container
-      %header
-        %h1 Maxsip Inventory
-        %nav.menu
+    %header.navbar.navbar-fixed-top.navbar-inverse
+      .container
+        = link_to 'Maxsip Inventory', '#', id: 'logo'
+        %nav
           -if logged_in?
-            %ul
+            %ul.nav.navbar-nav.navbar-right
               %li= link_to 'Home', root_path
               %li= link_to 'Users', users_path
               %li= link_to 'Vendors', vendors_path
@@ -24,9 +24,8 @@
               %li= link_to 'Settings', settings_path
               %li= link_to 'Log out', logout_path, method: :delete
 
-      .content
-        - flash.each do |type, message|
-          .alert= message
-        %p.notice= notice
+    .container
+      - flash.each do |type, message|
+        .alert= message
 
-        =yield
+      =yield
