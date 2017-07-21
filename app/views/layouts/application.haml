@@ -11,8 +11,6 @@
   %body
     .container
 
-      %p.notice= notice
-
       %header
         %h1 Maxsip Inventory
         %nav.menu
@@ -25,7 +23,12 @@
             %li= link_to 'Models', models_path
             %li= link_to 'Settings', settings_path
 
-      .content=yield
+      .content
+        - flash.each do |type, message|
+          .alert= message
+        %p.notice= notice
+
+        =yield
 
       %footer
         %p &copy; Maxsip #{ Date.current.year }
