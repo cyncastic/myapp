@@ -9,8 +9,6 @@
         %tr
           %td= link_to vendor.name, vendor
           %td.actions
-
             = link_to 'Edit', edit_vendor_path(vendor), class: 'btn btn-primary'
             = link_to 'Destroy', vendor, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger'
-
 = link_to 'New Vendor', new_vendor_path, class: 'btn btn-primary'
