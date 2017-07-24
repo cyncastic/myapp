@@ -9,7 +9,19 @@
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
 
   %body
-    %header.navbar.navbar-fixed-top.navbar-inverse
+    %nav.navbar.navbar-default
+      .container-fluid
+        .navbar-header
+          %a.navbar-brand{:href => "#"}
+            %img{alt: 'Maxsip Logo', src: 'http://maxsip.com/img/maxsip.jpg', height: '20'}/
+
+          %form.navbar-form.navbar-left{:role => "search"}
+            .form-group
+              %input.form-control{:placeholder => "Search", :type => "text"}/
+            %button.btn.btn-default{:type => "submit"} Submit
+
+
+    %header.navbar
       .container
         = link_to 'Maxsip Inventory', '#', id: 'logo'
         %nav
@@ -25,6 +37,12 @@
               %li= link_to 'Log out', logout_path, method: :delete
 
     .container
+      %ol.breadcrumb.inverse
+        %li
+          %a{:href => "#"} Home
+        %li
+          %a{:href => "#"} Library
+        %li.active Data
       - flash.each do |type, message|
         .alert= message
 

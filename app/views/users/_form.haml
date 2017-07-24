@@ -7,20 +7,16 @@
       %ul
         - user.errors.full_messages.each do |message|
           %li= message
-  .field
+  .form-group
     = form.label :name
-    = form.text_field :name, id: :user_name
-  .field
+    = form.text_field :name, id: :user_name, class: 'form-control'
+  .form-group
     = form.label :email
-    = form.text_field :email, id: :user_email
-
-  .field
+    = form.text_field :email, id: :user_email, class: 'form-control'
+  .form-group
     = form.label :password
-    = form.password_field  :password, id: :user_password
-
-  .field
+    = form.password_field  :password, id: :user_password, class: 'form-control'
+  .form-group
     = form.label :password_confirmation
-    = form.password_field  :password_confirmation, id: :user_password_confirmation
-
-  .actions
-    = form.submit
+    = form.password_field  :password_confirmation, id: :user_password_confirmation, class: 'form-control'
+  = form.submit class: 'btn btn-primary'

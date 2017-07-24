@@ -1,18 +1,20 @@
 %h1 Customers
-%table
-  %thead
-    %tr
-      %th Name
-      %th Maxsip
-      %th
-  %tbody
-    - @customers.each do |customer|
+
+.table-responsive
+  %table.table.table-striped.table-bordered.table-hover
+    %thead
       %tr
-        %td= link_to customer.name, customer
-        %td= customer.maxsip_id
-        %td.actions
+        %th Name
+        %th Maxsip
+        %th
+    %tbody
+      - @customers.each do |customer|
+        %tr
+          %td= link_to customer.name, customer
+          %td= customer.maxsip_id
+          %td.actions
 
-          = link_to 'Edit', edit_customer_path(customer)
-          = link_to 'Destroy', customer, method: :delete, data: { confirm: 'Are you sure?' }
+            = link_to 'Edit', edit_customer_path(customer)
+            = link_to 'Destroy', customer, method: :delete, data: { confirm: 'Are you sure?' }
 
-.actions= link_to 'New Customer', new_customer_path
+= link_to 'New Customer', new_customer_path, class: 'btn btn-primary'

@@ -7,11 +7,10 @@
       %ul
         - customer.errors.full_messages.each do |message|
           %li= message
-  .field
+  .form-group
     = form.label :name
-    = form.text_field :name, id: :customer_name
-  .field
+    = form.text_field :name, id: :customer_name, class: 'form-control'
+  .form-group
     = form.label :maxsip_id
-    = form.number_field :maxsip_id, id: :customer_maxsip_id
-  .actions
-    = form.submit
+    = form.number_field :maxsip_id, id: :customer_maxsip_id, class: 'form-control'
+  = form.submit class: 'btn btn-primary'

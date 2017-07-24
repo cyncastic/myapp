@@ -1,16 +1,17 @@
 %h1 Vendors
-%table
-  %thead
-    %tr
-      %th Name
-      %th
-  %tbody
-    - @vendors.each do |vendor|
+.table-responsive
+  %table.table.table-striped.table-bordered.table-hover
+    %thead
       %tr
-        %td= link_to vendor.name, vendor
-        %td.actions
+        %th Name
+        %th
+    %tbody
+      - @vendors.each do |vendor|
+        %tr
+          %td= link_to vendor.name, vendor
+          %td.actions
 
-          = link_to 'Edit', edit_vendor_path(vendor)
-          = link_to 'Destroy', vendor, method: :delete, data: { confirm: 'Are you sure?' }
+            = link_to 'Edit', edit_vendor_path(vendor)
+            = link_to 'Destroy', vendor, method: :delete, data: { confirm: 'Are you sure?' }
 
-.actions= link_to 'New Vendor', new_vendor_path
+= link_to 'New Vendor', new_vendor_path, class: 'btn btn-primary'

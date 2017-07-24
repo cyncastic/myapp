@@ -1,13 +1,10 @@
 .center.jumbotron
-
   %h1 Log in
-
   = form_for(:session, url: login_path) do |f|
-    .field
+    .form-group
       = f.label :email
-      = f.email_field :email
-    .field
+      = f.email_field :email, class: 'form-control'
+    .form-group
       = f.label :password
-      = f.password_field :password
-    .actions
-      = f.submit 'Log in', class: 'btn btn-lg btn-primary'
+      = f.password_field :password, class: 'form-control'
+    = f.submit 'Log in', class: 'btn btn-lg btn-primary'

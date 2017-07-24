@@ -7,8 +7,7 @@
       %ul
         - vendor.errors.full_messages.each do |message|
           %li= message
-  .field
+  .form-group
     = form.label :name
-    = form.text_field :name, id: :vendor_name
-  .actions
-    = form.submit
+    = form.text_field :name, id: :vendor_name, class: 'form-control'
+  = form.submit class: 'btn btn-primary'

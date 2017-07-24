@@ -7,11 +7,10 @@
       %ul
         - model.errors.full_messages.each do |message|
           %li= message
-  .field
+  .form-group
     = form.label :name
-    = form.text_field :name, id: :model_name
-  .field
+    = form.text_field :name, id: :model_name, class: 'form-control'
+  .form-group
     = form.label :manufacturer_id
-    = form.collection_select(:manufacturer_id, Manufacturer.all, :id, :name)
-  .actions
-    = form.submit
+    = form.collection_select :manufacturer_id, Manufacturer.all, :id, :name,{include_blank: 'Pick one...'}, { class: 'form-control' }
+  = form.submit class: 'btn btn-primary'

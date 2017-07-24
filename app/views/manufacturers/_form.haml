@@ -9,6 +9,5 @@
           %li= message
   .field
     = form.label :name
-    = form.text_field :name, id: :manufacturer_name
-  .actions
-    = form.submit
+    = form.text_field :name, id: :manufacturer_name, class: 'form-control'
+  = form.submit class: 'btn btn-primary'
