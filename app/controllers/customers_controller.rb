@@ -4,21 +4,25 @@ class CustomersController < ApplicationController
   # GET /customers
   # GET /customers.json
   def index
+    @title = 'All Customers'
     @customers = Customer.order(:name)
   end
 
   # GET /customers/1
   # GET /customers/1.json
   def show
+    @title = @customer.name
   end
 
   # GET /customers/new
   def new
+    @title = 'New Customer'
     @customer = Customer.new
   end
 
   # GET /customers/1/edit
   def edit
+    @title = 'Edit ' + @customer.name
   end
 
   # POST /customers

@@ -4,21 +4,25 @@ class ManufacturersController < ApplicationController
   # GET /manufacturers
   # GET /manufacturers.json
   def index
+    @title = 'All Manufacturers'
     @manufacturers = Manufacturer.order(:name)
   end
 
   # GET /manufacturers/1
   # GET /manufacturers/1.json
   def show
+    @title = @manufacturer.name
   end
 
   # GET /manufacturers/new
   def new
+    @title = 'New Manufacturers'
     @manufacturer = Manufacturer.new
   end
 
   # GET /manufacturers/1/edit
   def edit
+    @title = 'Edit ' + @manufacturer.name
   end
 
   # POST /manufacturers

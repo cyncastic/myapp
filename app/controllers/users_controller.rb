@@ -4,21 +4,25 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
+    @title = 'All Users'
     @users = User.order(:name)
   end
 
   # GET /users/1
   # GET /users/1.json
   def show
+    @title = @user.name
   end
 
   # GET /users/new
   def new
+    @title = 'New User'
     @user = User.new
   end
 
   # GET /users/1/edit
   def edit
+    @title = 'Edit ' + @user.name
   end
 
   # POST /users

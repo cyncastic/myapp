@@ -4,21 +4,25 @@ class ModelsController < ApplicationController
   # GET /models
   # GET /models.json
   def index
+    @title = 'All Models'
     @models = Model.order(:name)
   end
 
   # GET /models/1
   # GET /models/1.json
   def show
+    @title = @model.name
   end
 
   # GET /models/new
   def new
+    @title = 'New Model'
     @model = Model.new
   end
 
   # GET /models/1/edit
   def edit
+    @title = 'Edit ' + @model.name
   end
 
   # POST /models

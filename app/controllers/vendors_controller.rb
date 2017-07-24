@@ -4,21 +4,25 @@ class VendorsController < ApplicationController
   # GET /vendors
   # GET /vendors.json
   def index
+    @title = 'All Vendors'
     @vendors = Vendor.order(:name)
   end
 
   # GET /vendors/1
   # GET /vendors/1.json
   def show
+    @title = @vendor.name
   end
 
   # GET /vendors/new
   def new
+    @title = 'New Vendor'
     @vendor = Vendor.new
   end
 
   # GET /vendors/1/edit
   def edit
+    @title = 'Edit ' + @user.name
   end
 
   # POST /vendors

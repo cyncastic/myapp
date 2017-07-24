@@ -1,5 +1,6 @@
 .center.jumbotron
-  %h1 Log in
+  .page-header
+    %h1 Log in
   = form_for(:session, url: login_path) do |f|
     .form-group
       = f.label :email
